@@ -4,10 +4,12 @@
   </div>
   <div>
     Favorites:<br>
-    <%= f.check_box :chocolate %> Chocolate<br>
-    <%= f.check_box :rainbow %> Rainbows<br>
-    <%= f.check_box :puppies %> Puppies<br>
-    <%= f.check_box :cash %> Cold Hard Cash<br>
+    <% ary = [:chocolate, :rainbow, :puppies, :cash] %>
+    <% item = ary.shift %>
+    <% while item do %>
+      <%= f.check_box item %> <%= item.to_s.capitalize %><br>
+      <% item = ary.shift %>
+    <% end %>
   </div>
     <%= f.submit %>
 <% end %>
