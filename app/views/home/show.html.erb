@@ -1,6 +1,10 @@
 Thanks for submitting the form!  Here are your answers:<br>
 Name: <%= @survey.name %><br>
-Chocolate? <%= @survey.chocolate ? "Yes!" : "No" %><br>
-Rainbows? <%= @survey.rainbow ? "Yes!" : "No" %><br>
-Puppies? <%= @survey.puppies ? "Yes!" : "No" %><br>
-Cold Hard Cash? <%= @survey.cash ? "Yes!" : "No" %><br>
+
+<% ary = [:chocolate, :rainbow, :puppies, :cash] %>
+<% item = ary.shift %>
+<% while item do %>
+  <%= item == :cash ? "Cold Hard" : "" %>
+  <%= item.to_s.capitalize %>? <%= @survey.send(item) ? "Yes!" : "No" %> <br>
+  <% item = ary.shift %>
+<% end %>
