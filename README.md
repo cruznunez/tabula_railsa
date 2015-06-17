@@ -7,3 +7,12 @@ It is best to store environment variables when you wish to protect information, 
 post code where you had your authentication code used to github.
 
 Test migrations are only run once.
+
+
+Reflect: Now that you've put a restriction in place, how can the user get past it?
+
+go to '/reset' to reset the session
+
+Reflect: Why is it bad to just validate the uniqueness of the name field?
+
+Many people can have the same name.
