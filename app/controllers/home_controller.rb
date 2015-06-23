@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @survey = Survey.new(survey_params)
 
     respond_to do |format|
-      if session[:submitted] == false && @survey.save
+      if session[:submitted] != true && @survey.save
         session[:submitted] = true
         format.html { redirect_to home_path(@survey), notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
