@@ -19,7 +19,28 @@ $(function(){
     $("#submit").click(
       function(){
         $("#submit").prop('disabled', true);
-        $("#submit").closest("form").submit();
+        // $(this).parents("form").submit();
       }
-    )
+    );
+});
+
+$(function(){
+  $("#checkboxes").hide();
+  $("#submit").hide();
+})
+
+$(function() {
+  $("#survey_name").keypress(
+    function(){
+      $("#checkboxes").show();
+    }
+  )
+})
+
+$(function() {
+  $("#checkboxes").click(
+    function(){
+      $("#submit").show();
+    }
+  )
 })
